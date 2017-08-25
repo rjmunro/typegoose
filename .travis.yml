@@ -6,6 +6,9 @@ node_js:
 script:
   - npm test
   - npm run coveralls
+  - sed -i 's/"\^/"/g' package.json
+  - npm install
+  - npm test
 deploy:
   provider: npm
   email: "szokodiakos@gmail.com"
